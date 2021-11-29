@@ -15,11 +15,9 @@ ${SLEEP}  2s
 ***Keywords***
 Abrir o navegador
     Open Browser  ${URL}  ${BROWSER}
-
-Maximizar aba do navegador
     Maximize Browser Window
 
-Apertar ESC para sair o modal
+Fechar modal de boas vindas ao site
     Press Keys    None    ${KEY}
 
 Clicar no menu de Programação
@@ -30,8 +28,6 @@ Clicar no botão LISTA CANAIS
 
 Digitar nome do canal
     Input Text  ${INPUT_SEARCH_CHANNEL}  ${CHANNEL}
-
-Aguardar
     Sleep   ${SLEEP}
 
 Verificar se canal pesquisado é o igual ao que apareceu
