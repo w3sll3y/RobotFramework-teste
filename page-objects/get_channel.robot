@@ -4,14 +4,12 @@ Library  SeleniumLibrary
 ***Variables***
 ${URL}  https://sky.com.br
 ${BROWSER}  chrome
-${CHANNEL}  BANDSPORTS HD
 ${KEY}  ESC
 ${BUTTON_PROGRAMMATION}  partial link:Programação
 ${BUTTON_CHANNELS}  partial link:LISTA CANAIS
 ${INPUT_SEARCH_CHANNEL}  id=searchChannel
 ${SLEEP}  2s
 
-    
 ***Keywords***
 Abrir o navegador
     Open Browser  ${URL}  ${BROWSER}
@@ -26,9 +24,10 @@ Clicar no menu de Programação
 Clicar no botão LISTA CANAIS 
     Click Element  ${BUTTON_CHANNELS} 
 
-Digitar nome do canal
+Digitar "${CHANNEL}" na pesquisa por canais
     Input Text  ${INPUT_SEARCH_CHANNEL}  ${CHANNEL}
     Sleep   ${SLEEP}
+    Set Global Variable   ${CHANNEL} 
 
 Verificar se canal pesquisado é o igual ao que apareceu
     ${VERIFY}=  Get Text  xpath=//p[text()='${CHANNEL}']
