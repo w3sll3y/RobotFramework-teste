@@ -1,5 +1,6 @@
 ***Settings***
 Library  SeleniumLibrary
+Library  String
 
 ***Variables***
 ${URL}  https://sky.com.br
@@ -30,8 +31,9 @@ Digitar "${CHANNEL}" na pesquisa por canais
     Set Global Variable   ${CHANNEL} 
 
 Verificar se canal pesquisado é o igual ao que apareceu
-    ${VERIFY}=  Get Text  xpath=//p[text()='${CHANNEL}']
-    Should Be Equal  ${VERIFY}  ${CHANNEL}  msg=O teste falhou!
+    ${stri2}=  Convert To Upper Case  ${CHANNEL}
+    ${VERIFY}=  Get Text  xpath=//p[text()='${stri2}']
+    Should Contain  ${stri2}  ${VERIFY}  msg=O teste falhou!
 
 Fechar navegador
     Close Browser
